@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Hitung Kecepatan (V)</string>
+    <string name="jarak">Jarak (km)</string>
+    <string name="waktu">Waktu (jam)</string>
+    <string name="hitungKec">Hitung</string>
+    <string name="jarak_invalid">Isi Jarak</string>
+    <string name="waktu_invalid">Isi Waktu</string>
+    <string name="hasilKecepatan">Kecepatan : %1$.2f km/jam</string>
+    <string name="judul_kecepatan">Rumus Mencari Kecepatan</string>
+    <string name="rumus_kecepatan">Kecepatan(v) = Jarak(s) / Waktu(t)</string>
+    <string name="judul_waktu">Rumus Mencari Waktu</string>
+    <string name="rumus_waktu">Waktu(t) = Jarak(S) / Kecepatan(V)</string>
+    <string name="judul_jarak">Rumus Mencari Jarak</string>
+    <string name="rumus_jarak">Jarak(S) = Kecepatan(V) * Waktu(t)</string>
+    <string name="judulRumus">RUMUS</string>
+    <string name="lihat_rumus">Lihat Rumus</string>
+    <string name="isi_about">Hitung Kecepatan atau (V) merupakan sebuah aplikasi Android untuk menemukan besaran jarak tempuh suatu benda dalam satuan waktu</string>
+    <string name="about_app">Tentang Aplikasi</string>
+    <string name="bagikan">Bagikan</string>
+    <string name="bagikantemp">Jarak : %1$s km\nWaktu : %2$s jam\n\nHasil Kecepatan\n%3$s</string>
+    <string name="belum_ada_data">Belum ada data</string>
+    <string name="histori">Histori</string>
+    <string name="hasil_x">Hasil Kecepatan: %1$.0f km/jam </string>
+    <string name="data_x">S: %1$.0f km - T: %2$.0f jam</string>
+    <string name="hapus_histori">Hapus Histori</string>
+    <string name="konfirmasi_hapus">Apakah Anda Ingin Menghapus Semua Histori?</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
+    <string name="konsep">Konsep GLB</string>
+</resources>
