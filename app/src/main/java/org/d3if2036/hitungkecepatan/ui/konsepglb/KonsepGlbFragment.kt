@@ -37,14 +37,14 @@ class KonsepGlbFragment: Fragment() {
         return binding.root
     }
 
-    private fun getData(): List<KonsepGlb>{
-        return listOf(
-            KonsepGlb("coba", R.drawable.coba),
-            KonsepGlb("coba2", R.drawable.coba),
-            KonsepGlb("coba3", R.drawable.coba),
-            KonsepGlb("coba4", R.drawable.coba),
-        )
-    }
+//    private fun getData(): List<KonsepGlb>{
+//        return listOf(
+//            KonsepGlb("coba", R.drawable.gambar1),
+//            KonsepGlb("coba2", R.drawable.gambar1),
+//            KonsepGlb("coba3", R.drawable.gambar1),
+//            KonsepGlb("coba4", R.drawable.gambar1),
+//        )
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

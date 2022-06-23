@@ -3,6 +3,7 @@ package org.d3if2036.hitungkecepatan.ui.konsepglb
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import org.d3if2036.hitungkecepatan.R
 import org.d3if2036.hitungkecepatan.databinding.ListKonsepglbBinding
 import org.d3if2036.hitungkecepatan.ui.KonsepGlb
 
@@ -22,7 +23,7 @@ class KonsepGlbAdapter: RecyclerView.Adapter<KonsepGlbAdapter.ViewHolder>() {
 
         fun bind(konsepGlb: KonsepGlb) = with(binding){
             konsepTextView.text = konsepGlb.konsepglb
-            imageView.setImageResource(konsepGlb.image)
+            imageView.setImageResource(R.drawable.gambar1)
         }
     }
 

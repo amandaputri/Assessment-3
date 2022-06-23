@@ -16,28 +16,18 @@ class KonsepGlbViewModel: ViewModel() {
     private val data =MutableLiveData<List<KonsepGlb>>()
 
     init {
-        data.value = initData()
         retrieveData()
     }
 
     private fun retrieveData() {
         viewModelScope.launch (Dispatchers.IO) {
             try {
-                val result = KonsepGlbApi.service.getKonsepGlb()
-                Log.d("KonsepGlbViewModel", "Success: $result")
+//                data.postValue(KonsepGlbApi.service.getKonsepGlb())
+                data.postValue(KonsepGlbApi.service.getKonsepGlb())
             } catch (e: Exception) {
                 Log.d("KonsepGlbViewModel", "Failure: ${e.message}")
             }
         }
-    }
-
-    private fun initData(): List<KonsepGlb>{
-        return listOf(
-            KonsepGlb("coba", R.drawable.coba),
-            KonsepGlb("coba2", R.drawable.coba),
-            KonsepGlb("coba3", R.drawable.coba),
-            KonsepGlb("coba4", R.drawable.coba)
-        )
     }
 
     fun getData(): LiveData<List<KonsepGlb>> = data
