@@ -11,6 +11,7 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.d3if2036.hitungkecepatan.MainActivity
 import org.d3if2036.hitungkecepatan.R
 import org.d3if2036.hitungkecepatan.network.ApiStatus
 import org.d3if2036.hitungkecepatan.network.KonsepGlbApi
@@ -50,7 +51,7 @@ class KonsepGlbViewModel: ViewModel() {
             .setInitialDelay(1, TimeUnit.MINUTES)
             .build()
         WorkManager.getInstance(app).enqueueUniqueWork(
-            "updater",
+            MainActivity.CHANNEL_ID,
             ExistingWorkPolicy.REPLACE,
             request
         )
