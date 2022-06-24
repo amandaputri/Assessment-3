@@ -33,3 +33,5 @@ object KonsepGlbApi {
     }
 
 }
+
+enum class ApiStatus { LOADING, SUCCESS, FAILED }

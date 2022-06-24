@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if2036.hitungkecepatan.R
 import org.d3if2036.hitungkecepatan.databinding.TampilanListBinding
+import org.d3if2036.hitungkecepatan.network.ApiStatus
 import org.d3if2036.hitungkecepatan.ui.KonsepGlb
 
 class KonsepGlbFragment: Fragment() {
@@ -52,5 +53,24 @@ class KonsepGlbFragment: Fragment() {
         viewModel.getData().observe(viewLifecycleOwner,{
             myAdapter.updateData(it)
         })
+
+        viewModel.getStatus().observe(viewLifecycleOwner, {
+            updateProgress(it)
+        })
+    }
+
+    private fun updateProgress(status: ApiStatus) {
+        when (status) {
+            ApiStatus.LOADING -> {
+                binding.progressBar.visibility = View.VISIBLE
+            }
+            ApiStatus.SUCCESS -> {
+                binding.progressBar.visibility = View.GONE
+            }
+            ApiStatus.FAILED -> {
+                binding.progressBar.visibility = View.GONE
+                binding.networkError.visibility = View.VISIBLE
+            }
+        }
     }
 }
