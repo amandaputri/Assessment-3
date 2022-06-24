@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_baseline_history_24" />
+        tools:src="@drawable/ic_baseline_broken_image_24"  />
 
     <TextView
         android:id="@+id/konsepTextView"

@@ -27,4 +27,9 @@ object KonsepGlbApi {
     val service: KonsepGlbApiService by lazy {
         retrofit.create(KonsepGlbApiService::class.java)
     }
+
+    fun getKonsepUrl(konsepglb: String): String {
+        return "$BASE_URL$konsepglb.jpeg"
+    }
+
 }

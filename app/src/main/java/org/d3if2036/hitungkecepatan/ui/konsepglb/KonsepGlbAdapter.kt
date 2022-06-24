@@ -3,8 +3,10 @@ package org.d3if2036.hitungkecepatan.ui.konsepglb
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import org.d3if2036.hitungkecepatan.R
 import org.d3if2036.hitungkecepatan.databinding.ListKonsepglbBinding
+import org.d3if2036.hitungkecepatan.network.KonsepGlbApi
 import org.d3if2036.hitungkecepatan.ui.KonsepGlb
 
 class KonsepGlbAdapter: RecyclerView.Adapter<KonsepGlbAdapter.ViewHolder>() {
@@ -23,7 +25,10 @@ class KonsepGlbAdapter: RecyclerView.Adapter<KonsepGlbAdapter.ViewHolder>() {
 
         fun bind(konsepGlb: KonsepGlb) = with(binding){
             konsepTextView.text = konsepGlb.konsepglb
-            imageView.setImageResource(R.drawable.gambar1)
+            Glide.with(imageView.context)
+                .load(KonsepGlbApi.getKonsepUrl(konsepGlb.image))
+                .error(R.drawable.ic_baseline_broken_image_24)
+                .into(imageView)
         }
     }
 

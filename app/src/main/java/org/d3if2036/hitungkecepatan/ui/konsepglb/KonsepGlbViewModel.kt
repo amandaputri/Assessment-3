@@ -22,7 +22,6 @@ class KonsepGlbViewModel: ViewModel() {
     private fun retrieveData() {
         viewModelScope.launch (Dispatchers.IO) {
             try {
-//                data.postValue(KonsepGlbApi.service.getKonsepGlb())
                 data.postValue(KonsepGlbApi.service.getKonsepGlb())
             } catch (e: Exception) {
                 Log.d("KonsepGlbViewModel", "Failure: ${e.message}")
