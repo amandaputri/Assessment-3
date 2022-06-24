@@ -1,16 +1,22 @@
 package org.d3if2036.hitungkecepatan.ui.konsepglb
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.ExistingWorkPolicy
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.d3if2036.hitungkecepatan.R
 import org.d3if2036.hitungkecepatan.network.ApiStatus
 import org.d3if2036.hitungkecepatan.network.KonsepGlbApi
+import org.d3if2036.hitungkecepatan.network.UpdateWorker
 import org.d3if2036.hitungkecepatan.ui.KonsepGlb
+import java.util.concurrent.TimeUnit
 
 class KonsepGlbViewModel: ViewModel() {
 
@@ -38,4 +44,15 @@ class KonsepGlbViewModel: ViewModel() {
     fun getData(): LiveData<List<KonsepGlb>> = data
 
     fun getStatus(): LiveData<ApiStatus> = status
+
+    fun scheduleUpdater(app: Application) {
+        val request = OneTimeWorkRequestBuilder<UpdateWorker>()
+            .setInitialDelay(1, TimeUnit.MINUTES)
+            .build()
+        WorkManager.getInstance(app).enqueueUniqueWork(
+            "updater",
+            ExistingWorkPolicy.REPLACE,
+            request
+        )
+    }
 }
